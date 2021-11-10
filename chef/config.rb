@@ -6,4 +6,4 @@
  client_key               "#{current_dir}/new.pem"
  chef_server_url          "https://ip-172-31-44-14.us-east-2.compute.internal/organizations/adminorg"
  cookbook_path            ["#{current_dir}/../cookbooks"]
-
+ validation_key           "#{current_dir}/adminorg-validator.pem"

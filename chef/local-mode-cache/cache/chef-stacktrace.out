@@ -1,20 +1,46 @@
-Generated at 2021-11-10 03:03:34 +0000
-NameError: undefined local variable or method `es' for cookbook: my_cookbook, recipe: recipe1 :Chef::Recipe
-/home/ubuntu/chef-repo/.chef/local-mode-cache/cache/cookbooks/my_cookbook/recipes/recipe1.rb:1:in `from_file'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/mixin/from_file.rb:34:in `instance_eval'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/mixin/from_file.rb:34:in `from_file'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/cookbook_version.rb:230:in `load_ruby_recipe'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/cookbook_version.rb:200:in `load_recipe'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context.rb:393:in `load_recipe'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context/cookbook_compiler.rb:174:in `block in compile_recipes'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context/cookbook_compiler.rb:171:in `each'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context/cookbook_compiler.rb:171:in `compile_recipes'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context/cookbook_compiler.rb:79:in `compile'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/run_context.rb:223:in `load'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/policy_builder/expand_node_object.rb:103:in `setup_run_context'
-/opt/chef-workstation/embedded/lib/ruby/2.7.0/forwardable.rb:235:in `setup_run_context'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:498:in `setup_run_context'
-/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:284:in `run'
+Generated at 2021-11-10 10:26:12 +0000
+Mixlib::ShellOut::ShellCommandFailed: execute[mysql] (my_cookbook::mysql line 6) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '100'
+---- Begin output of  sudo apt install -y mysql ----
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+STDERR: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+E: Unable to locate package mysql
+---- End output of  sudo apt install -y mysql ----
+Ran  sudo apt install -y mysql returned 100
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/mixlib-shellout-3.0.9/lib/mixlib/shellout.rb:300:in `invalid!'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/mixlib-shellout-3.0.9/lib/mixlib/shellout.rb:287:in `error!'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/mixin/shell_out.rb:127:in `shell_out_compacted!'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/mixin/shell_out.rb:60:in `shell_out!'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider/execute.rb:52:in `block (2 levels) in <class:Execute>'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/mixin/why_run.rb:51:in `add_action'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider.rb:268:in `converge_by'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider/execute.rb:50:in `block in <class:Execute>'
+(eval):2:in `block in action_run'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider.rb:279:in `instance_eval'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider.rb:279:in `compile_and_converge_action'
+(eval):2:in `action_run'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/provider.rb:220:in `run_action'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource.rb:591:in `run_action'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:74:in `run_action'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:108:in `block in run_all_actions'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:108:in `each'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:108:in `run_all_actions'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:132:in `block in converge'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/resource_list.rb:96:in `block in execute_each_resource'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/stepable_iterator.rb:115:in `call_iterator_block'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/stepable_iterator.rb:86:in `step'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/stepable_iterator.rb:104:in `iterate'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/resource_collection/resource_list.rb:94:in `execute_each_resource'
+/opt/chef-workstation/embedded/lib/ruby/2.7.0/forwardable.rb:235:in `execute_each_resource'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/runner.rb:130:in `converge'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:714:in `block in converge'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:709:in `catch'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:709:in `converge'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:733:in `converge_and_save'
+/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/client.rb:288:in `run'
 /opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/application.rb:292:in `run_with_graceful_exit_option'
 /opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/application.rb:268:in `block in run_chef_client'
 /opt/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.1.16/lib/chef/local_mode.rb:42:in `with_server_connectivity'
