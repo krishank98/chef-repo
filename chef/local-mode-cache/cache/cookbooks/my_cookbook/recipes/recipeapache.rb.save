@@ -1,0 +1,18 @@
+
+#
+# Cookbook:: my_cookbook
+# Recipe:: recipeapache
+#
+# Copyright:: 2021, The Authors, All Rights Reserved.
+
+package 'apache2' do
+options '-y' 
+action :install 
+end
+
+execute "update-upgrade" do file '/var/www/html/index.html' do command "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o 
+  Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' upgrade" content "<h2>This is: #{node['name']}</h2><h1>Hello ChefConf2019!!</h1>" action 
+  :run end
+endservice 'apache2' do 
+action [ :enable, :start ]
+end
